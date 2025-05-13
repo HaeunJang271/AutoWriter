@@ -1,0 +1,109 @@
+/* ✅ 기본 스타일 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* ✅ 컨테이너 및 레이아웃 */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ✅ 폼 요소 스타일 */
+.input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  box-sizing: border-box;
+}
+
+body.dark .input,
+body.dark select,
+body.dark textarea {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+/* ✅ 버튼 스타일 */
+.button,
+.toggle {
+  padding: 10px 15px;
+  font-size: 16px;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.button:hover,
+.toggle:hover {
+  background: #005ac1;
+}
+
+/* ✅ 결과 박스 및 텍스트 */
+.result-box {
+  margin-top: 10px;
+}
+
+.textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.result-box button {
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+/* ✅ 반응형 (모바일 최적화) */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .button,
+  .toggle {
+    font-size: 14px;
+  }
+
+  .textarea {
+    height: 120px;
+  }
+}
