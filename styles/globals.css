@@ -1,19 +1,19 @@
-/* ✅ 기본 스타일 */
+/* 정리된 globals.css - 버튼 정렬: 제목과 버튼 한 줄에 배치 */
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
+  background-color: #eee;
+  color: #333;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark {
-  background-color: #121212;
-  color: #f5f5f5;
+  background-color: #1e1e2f;
+  color: #e0e0ff;
 }
 
-/* ✅ 컨테이너 및 레이아웃 */
 .container {
   max-width: 600px;
   margin: auto;
@@ -28,11 +28,26 @@ main {
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* ✅ 폼 요소 스타일 */
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .input,
 select,
 textarea {
@@ -41,7 +56,7 @@ textarea {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  background: #fff;
+  background: #fffaf0;
   color: #000;
   box-sizing: border-box;
 }
@@ -49,22 +64,23 @@ textarea {
 body.dark .input,
 body.dark select,
 body.dark textarea {
-  background: #1e1e1e;
-  border: 1px solid #444;
-  color: #fff;
+  background: #2c2c3a;
+  border-color: #555;
+  color: #e0e0ff;
 }
 
-/* ✅ 버튼 스타일 */
 .button,
 .toggle {
-  padding: 10px 15px;
-  font-size: 16px;
+  padding: 10px 18px;
+  font-size: 15px;
   background: #0070f3;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
+  min-width: 120px;
+  text-align: center;
 }
 
 .button:disabled {
@@ -77,9 +93,11 @@ body.dark textarea {
   background: #005ac1;
 }
 
-/* ✅ 결과 박스 및 텍스트 */
 .result-box {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .textarea {
@@ -87,12 +105,6 @@ body.dark textarea {
   resize: vertical;
 }
 
-.result-box button {
-  margin-top: 10px;
-  align-self: flex-end;
-}
-
-/* ✅ 반응형 (모바일 최적화) */
 @media screen and (max-width: 480px) {
   .container {
     padding: 15px;
@@ -101,6 +113,17 @@ body.dark textarea {
   .button,
   .toggle {
     font-size: 14px;
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: center;
   }
 
   .textarea {
